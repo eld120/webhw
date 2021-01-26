@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge; chrome=1"> <!-- Render Chrome if available or using latest version of Internet Explorer (Recommended). -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+        <title>Advanced</title>
+        <script src="./main.js"></script>
+        <link rel="stylesheet" href="https://fonts.google.com/specimen/Montserrat">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <nav class="nav">
+                <a href="/index.html" class="nav__link" id="search">Google Search</a>
+                <a href="/image.html" class="nav__link" id="image">Image Search</a>
+                
+            </nav>
+        </header>
+        <main class="main">
+            <form action="https://google.com/search" class="main__form">
+                <div class="main__wrapper">
+                    <div class="main__label">
+                        <label class="main__labll" >all these words:</label>
+                        <input type="text" name="as_q" class="main__all-input main__advanced" >
+                    </div>
+                    <div class="main__label">
+                        <label class="main__labll" >this exact word or phrase:</label>
+                        <input type="text" name="as_epq" class="main__exact-input main__advanced" >
+                    </div>
+                    <div class="main__label">
+                        <label class="main__labll" >any of these words:</label>
+                        <input type="text" name="as_oq" class="main__any-input main__advanced" >
+                    </div>
+                    <div class="main__label">
+                        <label class="main__labll" >none of these words:</label>
+                        <input type="text" name="as_eq" class="main__no-input main__advanced" >
+                    </div>
+                </div>
+                    <input type="submit" value="Advanced Search" class="main__advsubmit">
+                
+            </form>
+            
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>
