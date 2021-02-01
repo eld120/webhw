@@ -1,12 +1,8 @@
 from django.shortcuts import render
 import markdown2
-from . import util
+from encyclopedia import util
 
 
-def index(request):
-    return render(request, "encyclopedia/index.html", {
-        "entries": util.list_entries()
-    })
 
 def Django(request):
     return render(request, "encyclopedia/Django.html", {
