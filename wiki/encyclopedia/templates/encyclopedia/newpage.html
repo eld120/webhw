@@ -1,0 +1,28 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    New Wiki Entry
+{% endblock %}
+
+{% block body %}
+    <h2>Create A New Wiki Entry</h2>
+
+
+    
+    {% if error in errors %}
+
+        <h4>{{ error }}</h4>
+
+    {% elif error == 'Successful wiki entry created' %}
+        <h4>Successful wiki entry created</h4>
+
+    {% else %}
+    <form action="{% url 'newpage' %}"  method="POST">
+        <input type="text" name ="newtitle">
+        <input type="text" name="newwiki">
+        <button type="submit">submit</button>
+    </form>
+
+    {% endif %}
+
+{% endblock %}
