@@ -18,8 +18,8 @@
 
     {% else %}
     <form action="{% url 'newpage' %}"  method="POST">
-        <input type="text" name ="newtitle">
-        <input type="text" name="newwiki">
+        <input type="text" name ="newtitle" placeholder="Title">
+        <input type="text" name="newwiki" placeholder="type here...">
         <button type="submit">submit</button>
     </form>
 
