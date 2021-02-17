@@ -77,17 +77,17 @@ def newpage(request):
             }
 
         if newwiki['title'] in util.list_entries():
-            return render(request, 'encyclopedia/newpage.html'), {
+            return render(request, 'encyclopedia/newpage.html', {
                 'errors' : 'Error duplicate page found'
-            }
+            })
         else:
             util.save_entry(newwiki['title'], newwiki['content'])
-            return render(request, 'encyclopedia/newpage.html'), {
+            return render(request, 'encyclopedia/newpage.html', {
                 'errors' : 'Successful wiki entry created'
-            }
+            })
 
-    return render(request, 'encyclopedia/newpage.html'), {
+    return render(request, 'encyclopedia/newpage.html', {
         'errors' : None
-    }
+    })
 
         
