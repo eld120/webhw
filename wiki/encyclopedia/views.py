@@ -10,6 +10,13 @@ def index(request):
         "entries": util.list_entries()
     })
 
+def entry(request, title):
+
+    return render(request, "encyclopedia/entry.html", {
+        "entries": markdown2.markdown(util.get_entry(title)),
+        "titles": title
+    })
+'''
 def Django(request):
     return render(request, "encyclopedia/Django.html", {
         "entries": markdown2.markdown(util.get_entry('Django'))
@@ -33,7 +40,7 @@ def HTML(request):
 def Python(request):
     return render(request, "encyclopedia/Python.html", {
         "entries": markdown2.markdown(util.get_entry('Python'))
-    })
+    })'''
 
 def search(request):
     if request.method == 'GET':

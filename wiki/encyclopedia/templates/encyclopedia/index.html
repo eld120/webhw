@@ -11,7 +11,7 @@
         
         {% for entry in entries %}
         
-            <li>  <a href= "{% url entry %}" class=""> {{ entry }} </li>
+            <li>  <a href= "{% url 'entry' entry %}" class=""> {{ entry }} </li>
        
         {% endfor %}
     </ul>

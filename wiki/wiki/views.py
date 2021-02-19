@@ -3,7 +3,7 @@ import markdown2
 from encyclopedia import util
 
 
-
+'''
 def Django(request):
     return render(request, "encyclopedia/Django.html", {
         "entries": markdown2.markdown(util.get_entry('Django'))
@@ -27,4 +27,4 @@ def HTML(request):
 def Python(request):
     return render(request, "encyclopedia/Python.html", {
         "entries": markdown2.markdown(util.get_entry('Python'))
-    })
+    })'''
