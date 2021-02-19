@@ -20,10 +20,11 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("encyclopedia.urls")),
-    path("wiki/CSS/", views.CSS, name="encyclopedia/CSS"),
-    path("wiki/Django/", views.Django, name="encyclopedia/Django"),
-    path("wiki/Git/", views.Git, name="encyclopedia/Git"),
-    path("wiki/HTML/", views.HTML, name="encyclopedia/HTML"),
-    path("wiki/Python/", views.Python, name="encyclopedia/Python"),
+    
+    #path("wiki/CSS/", views.CSS, name="encyclopedia/CSS"),
+    #path("wiki/Django/", views.Django, name="encyclopedia/Django"),
+    #path("wiki/Git/", views.Git, name="encyclopedia/Git"),
+    #path("wiki/HTML/", views.HTML, name="encyclopedia/HTML"),
+    #path("wiki/Python/", views.Python, name="encyclopedia/Python"),
     
 ]
