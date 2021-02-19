@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {% for title in titles%}
+    {{title}}
+    {% endfor%}
+{% endblock %}
+{% block body %}
+
+
+   <p class="main__para"> {{entries | safe}} </p>
+
+
+{% endblock %}

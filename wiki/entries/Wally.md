@@ -1,1 +1,1 @@
-wally is a dog dog dog ##DOGDOG
+###Wally is a dog. a doggo dog dog

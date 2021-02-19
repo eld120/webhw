@@ -5,9 +5,18 @@ from . import util
 from django.http import Http404
 from django.views.decorators.csrf import csrf_exempt
 
+
 def index(request):
+   #wiki_entries = ["wiki/" + entry  for entry in util.list_entries()]
+    wiki_entries = util.list_entries()
     return render(request, "encyclopedia/index.html", {
-        "entries": util.list_entries()
+        "entries": wiki_entries
+    })
+
+def dynamic_lookup(request, title):
+    return render(request, ("encyclopedia/dynamic.html"), {
+        "entries": markdown2.markdown(util.get_entry(title)),
+        "titles": title
     })
 
 def Django(request):
