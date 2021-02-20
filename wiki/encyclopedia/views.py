@@ -1,4 +1,6 @@
 from django.http.response import HttpResponseNotFound
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 from django.shortcuts import render
 import markdown2
 from . import util
@@ -14,33 +16,25 @@ def entry(request, title):
 
     return render(request, "encyclopedia/entry.html", {
         "entries": markdown2.markdown(util.get_entry(title)),
-        "titles": title
-    })
-'''
-def Django(request):
-    return render(request, "encyclopedia/Django.html", {
-        "entries": markdown2.markdown(util.get_entry('Django'))
+        "md_name": title
     })
 
-def CSS(request):
-    return render(request, "encyclopedia/CSS.html", {
-        "entries": markdown2.markdown(util.get_entry('CSS'))
-    })
+def edit(request, title):
 
-def Git(request):
-    return render(request, "encyclopedia/Git.html", {
-        "entries": markdown2.markdown(util.get_entry('Git'))
-    })
-
-def HTML(request):
-    return render(request, "encyclopedia/HTML.html", {
-        "entries": markdown2.markdown(util.get_entry('HTML'))
-    })
-
-def Python(request):
-    return render(request, "encyclopedia/Python.html", {
-        "entries": markdown2.markdown(util.get_entry('Python'))
-    })'''
+    if request.method == "POST":
+        editwiki = {
+            'md_name' : title,
+            'content' : request.POST['editwiki']        
+            }
+        util.save_entry(editwiki['md_name'], editwiki['content'])
+        return render(request, 'encyclopedia/newpage.html', {
+                'errors' : 'Successful wiki entry updated'
+            })
+    return render(request, 'encyclopedia/edit.html', {
+            "md_name" : title ,
+            "contents" : util.get_entry(title)
+            })
+    '''return reverse("edit", kwargs={"title": title})'''
 
 def search(request):
     if request.method == 'GET':
@@ -97,4 +91,3 @@ def newpage(request):
         'errors' : None
     })
 
-        
