@@ -13,17 +13,18 @@ def index(request):
     })
 
 def entry(request, title):
-
-    return render(request, "encyclopedia/entry.html", {
+    context = {
         "entries": markdown2.markdown(util.get_entry(title)),
         "md_name": title
-    })
+    }
+    return render(request, "encyclopedia/entry.html", context)
 
-def edit(request, title):
-
+@csrf_exempt
+def edit(request, page):
+       
     if request.method == "POST":
         editwiki = {
-            'md_name' : title,
+            'md_name' : page,
             'content' : request.POST['editwiki']        
             }
         util.save_entry(editwiki['md_name'], editwiki['content'])
@@ -31,10 +32,10 @@ def edit(request, title):
                 'errors' : 'Successful wiki entry updated'
             })
     return render(request, 'encyclopedia/edit.html', {
-            "md_name" : title ,
-            "contents" : util.get_entry(title)
+            "md_name" : page ,
+            "contents" : util.get_entry(page)
             })
-    '''return reverse("edit", kwargs={"title": title})'''
+    
 
 def search(request):
     if request.method == 'GET':
