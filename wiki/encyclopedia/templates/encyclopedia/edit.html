@@ -9,9 +9,9 @@
         <h4>{{ md_name }}</h4>
 
     
-    <form action="{% url 'edit' %}"  method="POST">
+    <form action="{% url 'encyclopedia:edit' page=md_name %}"  method="POST">
         
-        <input type="text" name="editwiki" value={{ content }}>
+        <input type="text" name="editwiki" value="{{ contents }}" style="width: 60rem; height: 30rem;">
         <button type="submit">submit</button>
     </form>
 

@@ -17,7 +17,7 @@
         <h4>Successful wiki entry created</h4>
 
     {% else %}
-    <form action="{% url 'newpage' %}"  method="POST">
+    <form action="{% url 'encyclopedia:newpage' %}"  method="POST">
         <input type="text" name ="newtitle" placeholder="Title">
         <input type="text" name="newwiki" placeholder="type here...">
         <button type="submit">submit</button>
