@@ -6,8 +6,8 @@
 {% block body %}
 
 
-    <p class="main__para"> {{entries | safe}} </p>
+    <div class="main__para"> {{entries | safe}} </div>
 
-   <button><a href="{% url 'encyclopedia:edit' md_name %}">Edit Page</a></button> 
+   <button class="button"><a class="minilink" href="{% url 'encyclopedia:edit' md_name %}">Edit Page</a></button> 
 
 {% endblock %}

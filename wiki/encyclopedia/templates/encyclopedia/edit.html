@@ -4,15 +4,16 @@
     Edit Entry
 {% endblock %}
 {% block body %}
+    <div class="main__para">
     <h2>Edit Wiki Entry</h2>
 
         <h4>{{ md_name }}</h4>
-
+    </div>
     
     <form action="{% url 'encyclopedia:edit' page=md_name %}"  method="POST">
         
         <input type="text" name="editwiki" value="{{ contents }}" style="width: 60rem; height: 30rem;">
-        <button type="submit">submit</button>
+        <button class="button minilink" type="submit">Submit</button>
     </form>
 
     

@@ -5,13 +5,14 @@
 {% endblock %}
 
 {% block body %}
-    <h1>All Pages</h1>
 
-    <ul>
+    
+
+    <ul class="list_parent">
         
         {% for entry in entries %}
         
-            <li>  <a href= "{% url 'encyclopedia:entry' title=entry %}" class=""> {{ entry }} </li>
+            <li class="lists">  <a href= "{% url 'encyclopedia:entry' title=entry %}" class=""> {{ entry }} </li>
        
         {% endfor %}
     </ul>
