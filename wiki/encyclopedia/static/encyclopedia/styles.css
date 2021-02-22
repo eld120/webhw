@@ -1,65 +1,84 @@
 body {
-    margin: 0;
-    background-color: white;
-    
-    font-family: 'Roboto', sans-serif;
-    padding: 1rem;
-    background-image:linear-gradient(225deg, rgb(115, 109, 158), rgb(97, 19, 19));
-    background-repeat: no-repeat;
-    background-size: contain;
-    min-height: 100vh;
+  margin: 0;
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+  padding: 1rem;
+  background-image: linear-gradient(225deg, #736d9e, #611313);
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 100vh;
 }
 
-.row{
-    display: flex;
-    height: auto;
-    
+.row {
+  display: flex;
+  height: auto;
 }
 
-.sidebar{
-    
-    
-    width: 20rem;
-    
-}
-.sidebar > *{
-    margin-inline: 3rem;
-    padding: .45rem;
-    color: white;
-    
-}
-.sidebar > div > a{
-    text-decoration: none;
-    color: white;
+.sidebar {
+  margin-top: 3rem;
+  width: 20rem;
 }
 
-.main{
-    margin-inline: 2rem;
-    
-
-}
-.list_parent{
-    display: flex;
-    flex-flow: column wrap;
-    max-height: 80vh;
-}
-.lists{
-    list-style-type:none;
-    margin: 1rem;
-    
-    
+.sidebar > * {
+  margin-inline: 3rem;
+  padding: 0.45rem;
+  color: white;
 }
 
-.lists > a{
-    text-decoration: none;
-    color: white;
+.sidebar > div > a {
+  text-decoration: none;
+  color: white;
 }
-.main__para{
-    width: 55vw;
+
+.sidebar > div > a:hover {
+  color: #aaaaaa;
 }
-.main__para > * >*{
-    color: rgb(133, 255, 249);
+
+.main {
+  margin-top: 3rem;
+  margin-inline: 2rem;
 }
+
+.list_parent {
+  display: flex;
+  flex-flow: column wrap;
+  max-height: 80vh;
+}
+
+.lists {
+  list-style-type: none;
+  margin: 1rem;
+}
+
+.lists > a {
+  text-decoration: none;
+  color: white;
+}
+
+.lists > a:hover {
+  color: #aaaaaa;
+}
+
+.main__para {
+  width: 55vw;
+}
+
+.main__para > * > * {
+  color: #85fffa;
+}
+
 .main__para > * {
-    color: white;
+  color: white;
 }
+
+.button {
+  padding: 0.35rem;
+  background-color: #85fffa;
+  border-radius: 0.25rem;
+}
+
+.minilink {
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=styles.css.map */
