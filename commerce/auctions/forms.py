@@ -1,12 +1,19 @@
 from django import forms
 from django.forms.models import ModelForm
-from .models import Listings, Bids, Comments
+from django.views.generic.edit import CreateView
+from .models import Listing, Bid, Comment
 
 
-class ListingsForm(ModelForm):
+class ListingCreateForm(forms.ModelForm):
     class Meta:
-        model = Listings
+        model = Listing
         fields = [ 'title', 'description', 'active', 'start_price', 'auction_length']
+    
+
+# class ListingForm(ModelForm):
+#     class Meta:
+#         model = Listing
+#         fields = [ 'title', 'description', 'active', 'start_price', 'auction_length']
 
     # title = forms.CharField(title='Title', max_length=150)
     # description = forms.Textarea(max_length=500)
@@ -15,10 +22,10 @@ class ListingsForm(ModelForm):
 
 # class BidForm(ModelForm):
 #     class Meta:
-#         model = Bids
+#         model = Bid
 #         fields = ['listing_id', 'listing_bid']
 
 # class CommentForm(ModelForm):
 #     class Meta:
-#         model = Comments
+#         model = Comment
 #         fields = ['listing_id', 'text']

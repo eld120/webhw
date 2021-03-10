@@ -4,17 +4,21 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
-from .models import Listings, User
-from django.views.generic import ListView
+from .models import Listing, User
+from django.views.generic import ListView, CreateView
 
 class IndexView(ListView):
-    model = Listings
+    model = Listing
     template_name = 'auctions/index.html'
-
+    
 # def index(request):
 #     return render(request, "auctions/index.html")
 
-
+class ListingCreate(CreateView):
+    model = Listing
+    template_name = 'auctions/create.html'
+    fields = [ 'title', 'description', 'active', 'start_price', 'auction_length']
+    
 def login_view(request):
     if request.method == "POST":
 
