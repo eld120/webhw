@@ -1,0 +1,17 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>{{ object.title }}</h2>
+
+    
+        
+    <strong><p>Description: </p> </strong>{{ object.description }}
+    <strong><p>Starting Price</p> </strong>${{object.start_price}}
+    <strong>
+        <p>{{object.auction_length}}</p>
+    </strong>
+    
+    
+
+    
+{% endblock %}

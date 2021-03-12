@@ -3,6 +3,7 @@ from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+from django.views.generic.detail import DetailView
 
 from .models import Listing, User
 from django.views.generic import ListView, CreateView
@@ -10,15 +11,23 @@ from django.views.generic import ListView, CreateView
 class IndexView(ListView):
     model = Listing
     template_name = 'auctions/index.html'
+    context_object_name = 'context'
     
 # def index(request):
 #     return render(request, "auctions/index.html")
 
+class ListingDetail(DetailView):
+    model = Listing
+    template_name = 'auctions/listing_detail.html'
+    
+
+
 class ListingCreate(CreateView):
     model = Listing
-    template_name = 'auctions/create.html'
-    fields = [ 'title', 'description', 'active', 'start_price', 'auction_length']
-    
+    template_name = 'auctions/listing_create.html'
+    fields = [ 'title', 'description', 'active', 'start_price', 'auction_length', 'slug']
+
+
 def login_view(request):
     if request.method == "POST":
 

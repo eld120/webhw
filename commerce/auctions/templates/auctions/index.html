@@ -3,11 +3,16 @@
 {% block body %}
     <h2>Active Listings</h2>
 
-    {% for content in context  %}
-    
-    
-    
+    {% for object in context  %}
+        
+        <ul>
+            <a href="{{ object.get_absolute_url }}  ">{{ object }}</a> 
+            
+        </ul>
+        
+        
     {% endfor %}
 
     
 {% endblock %}
+
