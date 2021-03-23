@@ -37,10 +37,12 @@ class ListingDelete(DeleteView):
     form_class = ListingCreateForm
     success_url = reverse_lazy('index')
 
+
 class ListingUpdate(UpdateView):
     template_name = "auctions/listing_create.html"
     queryset = Listing.objects.all()
     form_class = ListingCreateForm
+
 
 def login_view(request):
     if request.method == "POST":
