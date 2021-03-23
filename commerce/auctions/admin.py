@@ -5,8 +5,8 @@ from .models import Listing, User, Bid, Comment
 
 class ListingAdmin(admin.ModelAdmin):
     list_display = ('title', 'description', 'image', 'active', 'start_price', 
-        'auction_length', 'auction_start', 'auction_end',  )
-
+         'auction_start', 'auction_end',  )
+    prepopulated_fields = {'slug' : ('title',)}
     
 
 

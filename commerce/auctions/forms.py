@@ -7,13 +7,15 @@ from .models import Listing, Bid, Comment
 class ListingCreateForm(forms.ModelForm):
     class Meta:
         model = Listing
-        fields = [ 'title', 'description', 'active', 'start_price', 'auction_length', 'slug']
+        fields = [ 'title','image', 'description', 'active', 'start_price']
+
+        
     
 
 # class ListingForm(ModelForm):
 #     class Meta:
 #         model = Listing
-#         fields = [ 'title', 'description', 'active', 'start_price', 'auction_length']
+#         fields = [ 'title', 'description', 'active', 'start_price']
 
     # title = forms.CharField(title='Title', max_length=150)
     # description = forms.Textarea(max_length=500)

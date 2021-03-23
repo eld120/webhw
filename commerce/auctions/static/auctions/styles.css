@@ -5,11 +5,30 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.main__navbar {
+.header__navbar {
   background-color: burlywood;
 }
-.main__navcontainer {
+.header__navcontainer {
   padding: 10px;
+  background-color: burlywood;
+}
+
+.main__heading {
+  margin: 0 auto;
+}
+.main__section {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.main__form {
+  display: flex;
+  flex-direction: column;
+  max-width: 50vw;
+  margin: 0 auto;
+}
+.main__submit {
+  max-width: 10rem;
 }
 
 .footer {

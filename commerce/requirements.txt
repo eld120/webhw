@@ -1,0 +1,4 @@
+gunicorn
+Pillow==8.0.1
+Django==3.1.4
+Pillow
